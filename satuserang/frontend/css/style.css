@@ -1,0 +1,268 @@
+/* ================================
+   ROOT THEME
+================================ */
+:root {
+    --primary: #1e40af;
+    --secondary: #0ea5e9;
+    --accent: #22c55e;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+
+    --bg-main: #f4f7fb;
+    --bg-card: rgba(255, 255, 255, 0.75);
+
+    --text-dark: #0f172a;
+    --text-light: #64748b;
+
+    --border-soft: rgba(0,0,0,0.08);
+    --glass: rgba(255,255,255,0.6);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+
+    --shadow-soft: 0 8px 24px rgba(0,0,0,0.08);
+    --shadow-strong: 0 12px 40px rgba(0,0,0,0.15);
+
+    --transition: all 0.25s ease;
+    --font-main: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* ================================
+   GLOBAL
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+body {
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+/* ================================
+   LAYOUT
+================================ */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+}
+
+/* ================================
+   LOGIN PAGE
+================================ */
+.login-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(15px);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-strong);
+    width: 100%;
+    max-width: 420px;
+    padding: 40px;
+    border: 1px solid var(--border-soft);
+    animation: fadeUp 0.6s ease;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-header p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-top: 6px;
+}
+
+/* ================================
+   FORM
+================================ */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 6px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 13px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-soft);
+    outline: none;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    background: rgba(255,255,255,0.9);
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(30,64,175,0.15);
+}
+
+/* ================================
+   BUTTON
+================================ */
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    transition: var(--transition);
+    box-shadow: 0 10px 25px rgba(30,64,175,0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(30,64,175,0.45);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* ================================
+   DASHBOARD
+================================ */
+.dashboard {
+    flex: 1;
+    padding: 25px;
+}
+
+.card {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    padding: 20px;
+    border: 1px solid var(--border-soft);
+}
+
+/* ================================
+   NAVBAR
+================================ */
+.navbar {
+    height: 65px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    box-shadow: var(--shadow-soft);
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.navbar h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* ================================
+   TABLE
+================================ */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    text-align: left;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--text-light);
+    padding: 12px;
+}
+
+.table td {
+    padding: 14px 12px;
+    font-size: 0.95rem;
+    border-top: 1px solid var(--border-soft);
+}
+
+.table tr:hover {
+    background: rgba(14,165,233,0.05);
+}
+
+/* ================================
+   BADGE
+================================ */
+.badge {
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge.success {
+    background: rgba(34,197,94,0.15);
+    color: #15803d;
+}
+
+.badge.warning {
+    background: rgba(245,158,11,0.15);
+    color: #92400e;
+}
+
+.badge.danger {
+    background: rgba(239,68,68,0.15);
+    color: #991b1b;
+}
+
+/* ================================
+   ANIMATION
+================================ */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 600px) {
+    .login-card {
+        padding: 28px;
+    }
+
+    .login-header h1 {
+        font-size: 1.5rem;
+    }
+}
